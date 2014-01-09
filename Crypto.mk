@@ -21,7 +21,7 @@ LOCAL_SRC_FILES += $(target_src_files)
 LOCAL_CFLAGS += $(target_c_flags)
 LOCAL_C_INCLUDES += $(target_c_includes)
 LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE:= libcrypto_static
+LOCAL_MODULE:= libcrypto
 LOCAL_ADDITIONAL_DEPENDENCIES := $(local_additional_dependencies)
 include $(BUILD_STATIC_LIBRARY)
 
@@ -43,7 +43,8 @@ LOCAL_C_INCLUDES += $(target_c_includes)
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE:= libcrypto
 LOCAL_ADDITIONAL_DEPENDENCIES := $(local_additional_dependencies)
-include $(BUILD_SHARED_LIBRARY)
+#include $(BUILD_SHARED_LIBRARY)
+
 
 #######################################
 # host shared library
@@ -57,7 +58,7 @@ LOCAL_LDLIBS += -ldl
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE:= libcrypto
 LOCAL_ADDITIONAL_DEPENDENCIES := $(local_additional_dependencies)
-include $(BUILD_HOST_SHARED_LIBRARY)
+#include $(BUILD_HOST_SHARED_LIBRARY)
 
 ########################################
 # host static library, which is used by some SDK tools.
@@ -72,4 +73,4 @@ LOCAL_LDLIBS += -ldl
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE:= libcrypto_static
 LOCAL_ADDITIONAL_DEPENDENCIES := $(local_additional_dependencies)
-include $(BUILD_HOST_STATIC_LIBRARY)
+#include $(BUILD_HOST_STATIC_LIBRARY)
